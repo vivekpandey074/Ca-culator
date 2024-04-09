@@ -2,6 +2,14 @@ const resultText=document.getElementById("resultText")
 
 
 function inputChar(input){
+
+    
+    if(resultText.value.length>=1)
+    {
+        const lastchar=resultText.value.charAt(resultText.value.length - 1)
+        if( (input==='.' || input ==='+' || input==='-' || input==='/' || input==='*') && (lastchar==='.' ||lastchar==='+' || lastchar==='-' || lastchar==='/' || lastchar==='*')) return;
+    }
+
     resultText.value+=input;
 }
 
@@ -11,6 +19,9 @@ function backspace(){
         resultText.value="";
         return;
     }
+   
+   
+
     resultText.value=resultText.value.slice(0,-1);
 }
 
